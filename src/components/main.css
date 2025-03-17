@@ -1,0 +1,34 @@
+.mainContainer{
+background: #fff;
+height: 60vh;
+overflow: hidden;
+}
+@media(max-width: 460px){
+    .mainContainer{
+      width: 100vw;
+      height: 50vh;
+    }
+}
+
+.mainContainer h1{
+    font-size: 80px;
+    margin-top: -20px;
+    margin-left: 60px;
+}
+@media(max-width: 460px){
+    .mainContainer h1{
+        font-size: 33px;
+        margin-top: 25px;
+        margin-left: -2px;
+    }
+}
+.mainContainer img{
+    width: 500px;
+    margin-top: 50px;
+}
+@media(max-width: 460px){
+    .mainContainer img{
+        width: 350px;
+        margin-top: 20px;
+    }
+}

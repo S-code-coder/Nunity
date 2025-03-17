@@ -1,0 +1,11 @@
+.body{
+    background:#F4F5FA;
+    height:100vh;
+    width:100vw;
+    overflow:hidden;
+}
+.side{
+    background:#fff;
+    height:100vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}

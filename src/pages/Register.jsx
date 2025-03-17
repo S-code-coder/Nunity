@@ -1,58 +1,114 @@
-import React from 'react'
-import { Footer, Navbar } from "../components";
-import { Link } from 'react-router-dom';
-const Register = () => {
-    return (
-        <>
-            <Navbar />
-            <div className="container my-3 py-3">
-                <h1 className="text-center">Register</h1>
-                <hr />
-                <div class="row my-4 h-100">
-                    <div className="col-md-4 col-lg-4 col-sm-8 mx-auto">
-                        <form>
-                            <div class="form my-3">
-                                <label for="Name">Full Name</label>
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="Name"
-                                    placeholder="Enter Your Name"
-                                />
-                            </div>
-                            <div class="form my-3">
-                                <label for="Email">Email address</label>
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="Email"
-                                    placeholder="name@example.com"
-                                />
-                            </div>
-                            <div class="form  my-3">
-                                <label for="Password">Password</label>
-                                <input
-                                    type="password"
-                                    class="form-control"
-                                    id="Password"
-                                    placeholder="Password"
-                                />
-                            </div>
-                            <div className="my-3">
-                                <p>Already has an account? <Link to="/login" className="text-decoration-underline text-info">Login</Link> </p>
-                            </div>
-                            <div className="text-center">
-                                <button class="my-2 mx-auto btn btn-dark" type="submit" disabled>
-                                    Register
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <Footer />
-        </>
-    )
-}
+import React, { useState } from 'react';
+import {  Navbar } from "../components";
+import './RegisterForm.css'; // Import the CSS file for styling
 
-export default Register
+const Register = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = 'Name is required';
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email address is invalid';
+    }
+    if (!formData.password) {
+      newErrors.password = 'Password is required';
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters';
+    }
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Passwords do not match';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log('Form submitted successfully:', formData);
+      // You can add your form submission logic here
+    } else {
+      console.log('Form has errors');
+    }
+  };
+
+  return (
+    <>
+    <Navbar />
+    <div className="register-form-container">
+      <form onSubmit={handleSubmit} className="register-form">
+        <h2>Register</h2>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          {errors.name && <span className="error">{errors.name}</span>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <span className="error">{errors.email}</span>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          {errors.password && <span className="error">{errors.password}</span>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+          />
+          {errors.confirmPassword && (
+            <span className="error">{errors.confirmPassword}</span>
+          )}
+        </div>
+        <button type="submit" className="submit-button">
+          Register
+        </button>
+      </form>
+    </div>
+    </>
+  );
+};
+
+export default Register;

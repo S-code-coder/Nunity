@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Navbar } from "../components";
+import { Navbar } from "../components";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const Checkout = () => {
@@ -154,7 +154,12 @@ const Checkout = () => {
                         <br />
                         <select className="form-select" id="country" required>
                           <option value="">Choose...</option>
+                          <option>Nigeria</option>
+                          <option>USA</option>
+                          <option>England</option>
                           <option>India</option>
+                          <option>Spain</option>
+                          <option>France</option>
                         </select>
                         <div className="invalid-feedback">
                           Please select a valid country.
@@ -169,6 +174,10 @@ const Checkout = () => {
                         <select className="form-select" id="state" required>
                           <option value="">Choose...</option>
                           <option>Punjab</option>
+                          <option>Lagos</option>
+                          <option>Manchester</option>
+                          <option>Madrid</option>
+
                         </select>
                         <div className="invalid-feedback">
                           Please provide a valid state.
@@ -290,7 +299,6 @@ const Checkout = () => {
         <hr />
         {state.length ? <ShowCheckout /> : <EmptyCart />}
       </div>
-      <Footer />
     </>
   );
 };

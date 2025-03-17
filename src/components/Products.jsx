@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import "./product.css";
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -12,8 +13,7 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
-  let componentMounted = true;
-
+ 
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
@@ -21,6 +21,8 @@ const Products = () => {
   };
 
   useEffect(() => {
+    let componentMounted = true;
+
     const getProducts = async () => {
       setLoading(true);
       const response = await fetch("https://fakestoreapi.com/products/");
@@ -76,31 +78,31 @@ const Products = () => {
       <>
         <div className="buttons text-center py-5">
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className="btn btn-outline-light btn-sm m-2"
             onClick={() => setFilter(data)}
           >
             All
           </button>
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className="btn btn-outline-light btn-sm m-2"
             onClick={() => filterProduct("men's clothing")}
           >
             Men's Clothing
           </button>
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className="btn btn-outline-light btn-sm m-2"
             onClick={() => filterProduct("women's clothing")}
           >
             Women's Clothing
           </button>
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className="btn btn-outline-light btn-sm m-2"
             onClick={() => filterProduct("jewelery")}
           >
             Jewelery
           </button>
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className="btn btn-outline-light btn-sm m-2"
             onClick={() => filterProduct("electronics")}
           >
             Electronics
@@ -163,8 +165,8 @@ const Products = () => {
       <div className="container my-3 py-3">
         <div className="row">
           <div className="col-12">
-            <h2 className="display-5 text-center">Latest Products</h2>
-            <hr />
+            <h2 className="display-5 text-center text-white">Latest Products</h2>
+            <div className="productLine"></div>
           </div>
         </div>
         <div className="row justify-content-center">

@@ -1,0 +1,75 @@
+.sideContainer{
+    height: inherit;
+    width: 100%;
+}
+
+.sideHeader h2{
+    font-family: "Emblema One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+}
+.sideItems{
+    margin-top: -25px;
+}
+.sideItem{
+    background: #F4F5FA;
+    padding: 10px;
+   border-radius: 10px;
+   border: #fff solid 2px;
+   cursor: pointer;
+   transition: border ease-in-out 500ms;
+}
+.sideItem:hover{
+    border: solid #dfe1e9 2px;
+}
+.sideItem p{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.sideItem_last{
+    background: #F4F5FA;
+   border-radius: 10px;
+   border: #fff solid 2px;
+   cursor: pointer;
+  margin-top: -25px;
+   padding: 5px;
+   display: grid;
+   place-items: center;
+   width: 90%;
+   margin-left: 20px;
+   transition: border ease-in-out 500ms;
+}
+.sideItem_last p{
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.sideItem_last:hover{
+    border: solid #dfe1e9 2px;
+}
+.userName{
+    background: #F4F5FA;
+    width:95%;
+    margin-left:15px;
+    padding: 10px;
+   border-radius: 15px;
+   border: #fff solid 2px;
+   cursor: pointer;
+   transition: border ease-in-out 500ms;
+   margin-top:10px;
+   display:grid;
+   place-items:center;
+}
+.userName:hover{
+    border: solid #dfe1e9 2px;
+}
+.initials{
+    background:#fff;
+    font-size:15px;
+    padding:10px;
+    border-radius:50px;
+    width:40px;
+    height:40px;
+}
