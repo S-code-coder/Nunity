@@ -6,7 +6,7 @@ A Ecommerce Website made with React.js Framework.
 
 ## Demo
 
-https://Nunity.netlify.app/
+https://nunity.netlify.app/
 
 ## Features
 
