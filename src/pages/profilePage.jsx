@@ -9,7 +9,7 @@ const ProfilePage = () => {
                 <div className="col-lg-3 side">
                     <SideView />
                 </div>
-                <div className="col-lg-9">
+                <div className="col-lg-9 right">
                     <RightView />
                 </div>
             </div>

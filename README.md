@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # E-Commerce Website
 
 A Ecommerce Website made with React.js Framework.
@@ -65,3 +66,7 @@ Just raise an issue, we will discuss it.
 If you have any feedback, please reach out to me [here](https://ssahibsingh.github.io/#contact)
 
 
+=======
+# Nunity
+An ecommerce platform
+>>>>>>> d8397994f332777a83d9377cbf8d0fe28d1ec00c

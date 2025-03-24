@@ -56,16 +56,16 @@ const Items = [
 const RightView = () => {
     return(
         <>
-            <div className="d-flex align-items-center justify-content-center mb-4" style={{gap:`${15}px`}}>
+            <div className="d-flex flex-column flex-md-row  flex-md-wrap align-items-center justify-content-center  mb-4" style={{gap:`${15}px`}}>
                 <Card />
                 <ItemCards name={Items[0].itemName} imgSrc={Items[0].imgSrc} text={Items[0].text}/>
             </div> 
-            <div className="d-flex align-items-center justify-content-center mb-4" style={{gap:`${15}px`}}>
+            <div className="d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-center mb-4 " style={{gap:`${15}px`}}>
                 <ItemCards name={Items[1].itemName} imgSrc={Items[1].imgSrc} text={Items[1].text}/>
                 <ItemCards name={Items[2].itemName} imgSrc={Items[2].imgSrc} text={Items[2].text}/>
                 <ItemCards name={Items[3].itemName} imgSrc={Items[3].imgSrc} text={Items[3].text}/>
             </div> 
-            <div className="d-flex align-items-center justify-content-center" style={{gap:`${15}px`}}>
+            <div className="d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-center" style={{gap:`${15}px`}}>
             <ItemCards name={Items[4].itemName} imgSrc={Items[4].imgSrc} text={Items[4].text}/>
             <ItemCards name={Items[5].itemName} imgSrc={Items[5].imgSrc} text={Items[5].text}/>
                 <ItemCards name={Items[6].itemName} imgSrc={Items[6].imgSrc} text={Items[6].text}/>
